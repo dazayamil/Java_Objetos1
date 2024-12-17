@@ -61,4 +61,11 @@ public abstract class Personaje {
                 .filter( oponente -> this.cumpleIgualdad(oponente, 12))
                 .collect(Collectors.toList());
     }
+
+    protected abstract void setearHabilidades();
+
+    public void cambiarRol(Rol rol){
+        this.rol = rol;
+        this.setearHabilidades();
+    }
 }

@@ -4,8 +4,7 @@ public class Orco extends Personaje{
     private int contador;
     public Orco(String nombre, Rol rol){
         super(nombre, rol);
-        this.inteligencia = 1;
-        this.fuerza = 2;
+        this.setearHabilidades();
         this.contador = 0;
     }
 
@@ -23,5 +22,11 @@ public class Orco extends Personaje{
             this.rol.incrementarHabilidades(this);
             this.contador=0;
         }
+    }
+
+    @Override
+    protected void setearHabilidades() {
+        this.fuerza = 2;
+        this.inteligencia = 1;
     }
 }

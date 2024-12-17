@@ -3,8 +3,7 @@ package Parciales.ResolucionParcial02;
 public class Humano extends Personaje{
     public Humano(String nombre, Rol rol){
         super(nombre, rol);
-        this.inteligencia = 2;
-        this.fuerza = 1;
+        this.setearHabilidades();
     }
 
     @Override
@@ -19,5 +18,11 @@ public class Humano extends Personaje{
         if(this.nivel > 7){
             this.rol.incrementarHabilidades(this);
         }
+    }
+
+    @Override
+    protected void setearHabilidades() {
+        this.inteligencia = 2;
+        this.fuerza = 1;
     }
 }
