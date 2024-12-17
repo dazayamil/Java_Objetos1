@@ -8,4 +8,10 @@ public class Orco extends Personaje{
         setFuerza(2);
         this.contador = 0;
     }
+
+    @Override
+    public double poderDeAtaque(int hora) {
+        double valorBase = super.poderDeAtaque(hora);
+        return this.momentoDelDia(hora).equals("noche") ? valorBase * 1.60 : valorBase;
+    }
 }

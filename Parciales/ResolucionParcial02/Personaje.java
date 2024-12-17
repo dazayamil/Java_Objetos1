@@ -30,7 +30,10 @@ public class Personaje {
         this.inteligencia = inteligencia;
     }
 
-    public double poderDeAtaque(){
-        return 0;
+    protected String momentoDelDia(int hora){
+        return (hora >= 8 && hora <= 20) ? "dia" : "noche";
+    }
+    public double poderDeAtaque(int hora){
+        return this.rol.valorBase(this);
     }
 }
