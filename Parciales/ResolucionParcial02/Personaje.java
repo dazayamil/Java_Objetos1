@@ -1,5 +1,8 @@
 package Parciales.ResolucionParcial02;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public abstract class Personaje {
     protected String nombre;
     protected int nivel;
@@ -46,5 +49,16 @@ public abstract class Personaje {
             this.subirNivel();
             oponente.subirNivel();
         }
+    }
+
+    private boolean cumpleIgualdad(Personaje p1, int hora){
+        return ((this.nivel == p1.getNivel()) && (p1.poderDeAtaque(hora) > 5)) || (this.nivel % p1.getNivel() <= 2);
+
+    }
+
+    public List<Personaje> buscarOponentes(List<Personaje> listaOponentes){
+        return listaOponentes.stream()
+                .filter( oponente -> this.cumpleIgualdad(oponente, 12))
+                .collect(Collectors.toList());
     }
 }
