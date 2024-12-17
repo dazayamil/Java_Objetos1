@@ -34,4 +34,17 @@ public abstract class Personaje {
     public void incrementarFuerza(int valor){this.fuerza += valor;}
 
     public abstract void subirNivel();
+
+    public void enfrentarA(Personaje oponente, int hora){
+        double poderP1 = this.poderDeAtaque(hora);
+        double poderP2 = oponente.poderDeAtaque(hora);
+        if(poderP1 > poderP2){
+            this.subirNivel();
+        } else if (poderP2 > poderP1) {
+            oponente.subirNivel();
+        } else {
+            this.subirNivel();
+            oponente.subirNivel();
+        }
+    }
 }
