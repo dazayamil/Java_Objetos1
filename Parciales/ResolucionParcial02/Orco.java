@@ -15,13 +15,15 @@ public class Orco extends Personaje{
     }
 
     @Override
-    public void subirNivel() {
+    public boolean subirNivel() {
         this.nivel++;
         this.contador++;
-        if(this.nivel == 3){
+        if(this.contador == 3){
             this.rol.incrementarHabilidades(this);
             this.contador=0;
+            return true;
         }
+        return false;
     }
 
     @Override

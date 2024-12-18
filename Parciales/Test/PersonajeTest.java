@@ -3,7 +3,7 @@ import Parciales.ResolucionParcial02.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PersonajeTest {
     private Humano humano;
@@ -23,5 +23,23 @@ public class PersonajeTest {
     void poderDeAtaque(){
         assertEquals(5, humano.poderDeAtaque(22));
         assertEquals(4, orco.poderDeAtaque(17));
+    }
+
+    @Test
+    void personajeConNivelSuficiente(){
+        for(int i=0; i < 6; i++){
+            humano.subirNivel();
+        }
+        assertTrue(humano.subirNivel());
+
+        orco.subirNivel();
+        orco.subirNivel();
+        assertTrue(orco.subirNivel());
+    }
+
+    @Test
+    void personajeSinNivel(){
+        assertFalse(humano.subirNivel());
+        assertFalse(orco.subirNivel());
     }
 }

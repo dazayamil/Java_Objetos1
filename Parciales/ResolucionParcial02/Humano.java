@@ -13,11 +13,13 @@ public class Humano extends Personaje{
     }
 
     @Override
-    public void subirNivel() {
+    public boolean subirNivel() {
         this.nivel++;
         if(this.nivel > 7){
             this.rol.incrementarHabilidades(this);
+            return true;
         }
+        return false;
     }
 
     @Override

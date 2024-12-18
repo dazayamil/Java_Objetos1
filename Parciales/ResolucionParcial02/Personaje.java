@@ -36,7 +36,7 @@ public abstract class Personaje {
     public void incrementarInteligencia(int valor){ this.inteligencia += valor;}
     public void incrementarFuerza(int valor){this.fuerza += valor;}
 
-    public abstract void subirNivel();
+    public abstract boolean subirNivel();
 
     public void enfrentarA(Personaje oponente, int hora){
         double poderP1 = this.poderDeAtaque(hora);
