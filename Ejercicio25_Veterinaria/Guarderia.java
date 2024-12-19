@@ -6,4 +6,11 @@ public class Guarderia extends Servicio{
         super(mascota);
         this.cantidadDias = cantidadDias;
     }
+
+    @Override
+    public double costoServicio(double costo) {
+        double costoBase = this.cantidadDias * costo;
+        double costoConDescuento = costoBase * 0.60;
+        return this.mascota.getCantidadServicio() > 5 ? costoConDescuento : costoBase;
+    }
 }

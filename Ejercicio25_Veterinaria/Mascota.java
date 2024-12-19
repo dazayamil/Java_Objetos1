@@ -32,4 +32,8 @@ public class Mascota {
         this.servicios.add(guarderia);
         return guarderia;
     }
+
+    public int getCantidadServicio(){
+        return this.servicios.size();
+    }
 }

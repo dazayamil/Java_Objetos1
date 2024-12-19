@@ -10,4 +10,6 @@ public abstract class Servicio {
         this.fechaAtencion = LocalDate.now();
         this.mascota = mascota;
     }
+
+    public abstract double costoServicio(double costo);
 }
