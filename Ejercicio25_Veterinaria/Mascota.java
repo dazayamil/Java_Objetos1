@@ -36,4 +36,11 @@ public class Mascota {
     public int getCantidadServicio(){
         return this.servicios.size();
     }
+
+    public double recaudacionEnFechaX(LocalDate fechaN){
+        return this.servicios.stream()
+                .filter(s -> s.estaEnLaFecha(fechaN))
+                .mapToDouble(s -> s.costoServicio())
+                .sum();
+    }
 }

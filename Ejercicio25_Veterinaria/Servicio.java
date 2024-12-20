@@ -11,5 +11,9 @@ public abstract class Servicio {
         this.mascota = mascota;
     }
 
+    public boolean estaEnLaFecha(LocalDate fechaN){
+        return this.fechaAtencion.equals(fechaN);
+    }
+
     public abstract double costoServicio();
 }
