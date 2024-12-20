@@ -6,7 +6,7 @@ public class ConsultaMedica extends ServicioConMedico{
     }
 
     @Override
-    public double costoServicio(double costo) {
-        return super.costosAdicionales(costo) + medico.antiguedad();
+    public double costoServicio( ) {
+        return super.costosAdicionales() + 300 + medico.antiguedad();
     }
 }

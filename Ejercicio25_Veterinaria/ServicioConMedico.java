@@ -14,8 +14,8 @@ public abstract class ServicioConMedico extends Servicio{
         return this.fechaAtencion.getDayOfWeek() == DayOfWeek.SUNDAY ? 200 : 0;
     }
 
-    public double costosAdicionales(double costo){
-        return this.medico.getHonorarios() + costo + adicionalDomingo();
+    public double costosAdicionales(){
+        return this.medico.getHonorarios() + adicionalDomingo();
     }
 
 }

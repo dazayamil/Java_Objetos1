@@ -10,7 +10,7 @@ public class Vacunacion extends ServicioConMedico{
     }
 
     @Override
-    public double costoServicio(double costo) {
-        return super.costosAdicionales(costo) + this.costoVacunacion;
+    public double costoServicio() {
+        return super.costosAdicionales() + 500 + this.costoVacunacion;
     }
 }

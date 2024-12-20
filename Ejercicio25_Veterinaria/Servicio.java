@@ -11,5 +11,5 @@ public abstract class Servicio {
         this.mascota = mascota;
     }
 
-    public abstract double costoServicio(double costo);
+    public abstract double costoServicio();
 }
