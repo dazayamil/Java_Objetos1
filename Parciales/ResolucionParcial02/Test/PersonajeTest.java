@@ -1,4 +1,4 @@
-package Parciales.Test;
+package Parciales.ResolucionParcial02.Test;
 import Parciales.ResolucionParcial02.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
