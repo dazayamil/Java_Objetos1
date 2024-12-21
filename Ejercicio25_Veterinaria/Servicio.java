@@ -15,5 +15,9 @@ public abstract class Servicio {
         return this.fechaAtencion.equals(fechaN);
     }
 
+    public void setFechaAtencion(LocalDate fechaAtencion) {
+        this.fechaAtencion = fechaAtencion;
+    }
+
     public abstract double costoServicio();
 }
