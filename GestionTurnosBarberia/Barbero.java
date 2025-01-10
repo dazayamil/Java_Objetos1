@@ -33,8 +33,17 @@ public class Barbero {
         this.turnosCancelados.add(turno);
         c.turnoCancelado(turno);
         this.registroTurnos.remove(turno);
-        return "Por motivos de Emergencia, el turno se cancela. Mil disculpas."
+        return "Por motivos de Emergencia, el turno se cancela. Mil disculpas.";
     }
 
-    //Editar Turno
+    public boolean editarTurno(Turno turno, LocalDate fechaNueva, String horaNueva){
+        boolean estaOcupado = this.registroTurnos.stream()
+                .anyMatch(t -> t.estaLibre(fechaNueva, horaNueva));
+        if(estaOcupado){
+            return false;
+        }
+        turno.cambiarFechaYHora(fechaNueva,horaNueva);
+        return true;
+    }
+
 }

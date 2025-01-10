@@ -22,4 +22,13 @@ public class Turno {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public void cambiarFechaYHora(LocalDate fechaNueva, String horaNueva){
+        this.fecha = fechaNueva;
+        this.hora = horaNueva;
+    }
+
+    public boolean estaLibre(LocalDate fechaNueva, String horaNueva){
+        return (this.fecha.equals(fechaNueva) && this.hora.equals(horaNueva));
+    }
 }
