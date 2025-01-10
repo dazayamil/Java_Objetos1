@@ -17,6 +17,9 @@ public class Turno {
         this.tipoServicio = tipoServicio;
         this.barbero = barbero;
         this.cliente = cliente;
+    }
 
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }

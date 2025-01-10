@@ -24,7 +24,9 @@ public class Barbero {
         this.registroTurnos.add(turno);
     }
 
-    //Aceptar Turno, pasa de "Pendiente" a "Aceptado"
+    public void aceptarTurno(Turno turno){
+        turno.setEstado("aceptado");
+    }
 
     //Cancelar Turno
 
