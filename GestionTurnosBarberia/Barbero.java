@@ -19,7 +19,10 @@ public class Barbero {
         this.turnosCancelados = new ArrayList<>();
     }
 
-    //Reservar Turno Cliente
+    public void reservarTurnoCliente(Cliente c, LocalDate fechaN, String hora, TipoServicio servicio){
+        Turno turno = new Turno(fechaN, hora, servicio, this, c);
+        this.registroTurnos.add(turno);
+    }
 
     //Aceptar Turno, pasa de "Pendiente" a "Aceptado"
 
