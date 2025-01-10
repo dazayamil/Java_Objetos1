@@ -24,11 +24,17 @@ public class Barbero {
         this.registroTurnos.add(turno);
     }
 
-    public void aceptarTurno(Turno turno){
+    public void aceptarTurno(Turno turno, Cliente c){
         turno.setEstado("aceptado");
+        c.agregarTurno(turno);
     }
 
-    //Cancelar Turno
+    public String cancelarTurno(Turno turno, Cliente c){
+        this.turnosCancelados.add(turno);
+        c.turnoCancelado(turno);
+        this.registroTurnos.remove(turno);
+        return "Por motivos de Emergencia, el turno se cancela. Mil disculpas."
+    }
 
     //Editar Turno
 }
