@@ -3,6 +3,7 @@ package GestionTurnosBarberia;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Barbero {
     private String nombre;
@@ -44,6 +45,13 @@ public class Barbero {
         }
         turno.cambiarFechaYHora(fechaNueva,horaNueva);
         return true;
+    }
+
+    public List<Turno> turnosAtentidosEnFechaDada(LocalDate fechaX){
+        return this.registroTurnos.stream()
+                .filter(t -> t.estaEnFecha(fechaX))
+                .filter(t -> t.getEstado().equals("aceptado"))
+                .collect(Collectors.toList());
     }
 
 }

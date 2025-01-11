@@ -19,6 +19,10 @@ public class Turno {
         this.cliente = cliente;
     }
 
+    public String getEstado() {
+        return this.estado;
+    }
+
     public void setEstado(String estado) {
         this.estado = estado;
     }
@@ -30,5 +34,8 @@ public class Turno {
 
     public boolean estaLibre(LocalDate fechaNueva, String horaNueva){
         return (this.fecha.equals(fechaNueva) && this.hora.equals(horaNueva));
+    }
+    public boolean estaEnFecha(LocalDate fechaX){
+        return this.fecha.equals(fechaX);
     }
 }
