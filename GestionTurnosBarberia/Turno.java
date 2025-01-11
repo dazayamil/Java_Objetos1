@@ -23,6 +23,10 @@ public class Turno {
         return this.estado;
     }
 
+    public double costoTotalTurno(){
+        return this.tipoServicio.getCosto() + this.barbero.getTarifaBase();
+    }
+
     public void setEstado(String estado) {
         this.estado = estado;
     }

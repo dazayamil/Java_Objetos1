@@ -20,6 +20,10 @@ public class Barbero {
         this.turnosCancelados = new ArrayList<>();
     }
 
+    public double getTarifaBase() {
+        return this.tarifaBase;
+    }
+
     public void reservarTurnoCliente(Cliente c, LocalDate fechaN, String hora, TipoServicio servicio){
         Turno turno = new Turno(fechaN, hora, servicio, this, c);
         this.registroTurnos.add(turno);
@@ -52,6 +56,13 @@ public class Barbero {
                 .filter(t -> t.estaEnFecha(fechaX))
                 .filter(t -> t.getEstado().equals("aceptado"))
                 .collect(Collectors.toList());
+    }
+
+    public double gananciasEnFechaN(LocalDate fechaX){
+        return this.registroTurnos.stream()
+                .filter(t -> t.estaEnFecha(fechaX))
+                .mapToDouble(t -> t.costoTotalTurno())
+                .sum();
     }
 
 }
