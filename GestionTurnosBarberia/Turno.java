@@ -1,5 +1,6 @@
 package GestionTurnosBarberia;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 public class Turno {
@@ -23,8 +24,12 @@ public class Turno {
         return this.estado;
     }
 
+    public double costoAtencionDomingo(){
+        return this.fecha.getDayOfWeek() == DayOfWeek.SUNDAY ? 100 : 0;
+    }
+
     public double costoTotalTurno(){
-        return this.tipoServicio.getCosto() + this.barbero.getTarifaBase();
+        return this.tipoServicio.getCosto() + this.barbero.getTarifaBase() + (2 * this.tipoServicio.getDuracion()) + this.barbero.getAntiguedad() + costoAtencionDomingo();
     }
 
     public void setEstado(String estado) {

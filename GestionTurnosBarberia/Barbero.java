@@ -1,6 +1,7 @@
 package GestionTurnosBarberia;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -63,6 +64,11 @@ public class Barbero {
                 .filter(t -> t.estaEnFecha(fechaX))
                 .mapToDouble(t -> t.costoTotalTurno())
                 .sum();
+    }
+
+    public double getAntiguedad(){
+        int years = Period.between(this.fechaIngreso, LocalDate.now()).getYears();
+        return years * 50;
     }
 
 }
