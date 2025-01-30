@@ -12,4 +12,17 @@ public class Product {
         this.price = price;
         this.availableQuantity = availableQuantity;
     }
+
+    public void setAvailableQuantity(int availableQuantity) {
+        this.availableQuantity = availableQuantity;
+    }
+
+    public boolean stockProduct(int quantity){
+        if(this.availableQuantity >= quantity){
+            int finalAmount = this.availableQuantity - quantity;
+            this.setAvailableQuantity(finalAmount);
+            return true;
+        }
+        return false;
+    }
 }

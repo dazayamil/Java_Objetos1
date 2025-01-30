@@ -10,4 +10,13 @@ public class Client extends User{
         super(name, address);
         this.orders = new ArrayList<>();
     }
+
+    public boolean crearPedido(PaymentMethod paymentMethod, ShippingMethod shippingMethod, Product product, int quantity){
+        if(product.stockProduct(quantity)){
+            Order order = new Order(this, product, quantity, paymentMethod, shippingMethod);
+            this.orders.add(order);
+            return true;
+        }
+        return false;
+    }
 }
