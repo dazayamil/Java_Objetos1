@@ -11,12 +11,12 @@ public class Order {
     private PaymentMethod paymentMethod;
     private ShippingMethod shippingMethod;
 
-    public Order(Client client, Product product, int quantity, PaymentMethod paymentMethod, ShippingMethod shippingMethod){
+    public Order(Client client, Product product, int quantity, PaymentMethod payment, ShippingMethod shipping){
         this.client = client;
         this.product = product;
         this.quantity = quantity;
-        this.paymentMethod = paymentMethod;
-        this.shippingMethod = shippingMethod;
+        this.paymentMethod = payment;
+        this.shippingMethod = shipping;
     }
 
     public void setPaymentMethod(PaymentMethod paymentMethod) {

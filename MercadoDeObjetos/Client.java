@@ -11,9 +11,9 @@ public class Client extends User{
         this.orders = new ArrayList<>();
     }
 
-    public boolean crearPedido(PaymentMethod paymentMethod, ShippingMethod shippingMethod, Product product, int quantity){
+    public boolean crearPedido(PaymentMethod payment, ShippingMethod shipping, Product product, int quantity){
         if(product.stockProduct(quantity)){
-            Order order = new Order(this, product, quantity, paymentMethod, shippingMethod);
+            Order order = new Order(this, product, quantity, payment, shipping);
             this.orders.add(order);
             return true;
         }
