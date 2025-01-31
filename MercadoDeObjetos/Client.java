@@ -1,7 +1,9 @@
 package MercadoDeObjetos;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Client extends User{
     private List<Order> orders;
@@ -18,5 +20,11 @@ public class Client extends User{
             return true;
         }
         return false;
+    }
+
+    public List<Order> sortedOrders(){
+        return this.orders.stream()
+                .sorted(Comparator.comparing(order -> order.getProduct().getCategory()))
+                .collect(Collectors.toList());
     }
 }

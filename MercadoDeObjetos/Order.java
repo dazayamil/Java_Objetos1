@@ -19,6 +19,10 @@ public class Order {
         this.shippingMethod = shipping;
     }
 
+    public Product getProduct() {
+        return this.product;
+    }
+
     public void setPaymentMethod(PaymentMethod paymentMethod) {
         this.paymentMethod = paymentMethod;
     }

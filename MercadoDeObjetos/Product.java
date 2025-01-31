@@ -13,6 +13,10 @@ public class Product {
         this.availableQuantity = availableQuantity;
     }
 
+    public String getCategory() {
+        return this.category;
+    }
+
     public void setAvailableQuantity(int availableQuantity) {
         this.availableQuantity = availableQuantity;
     }
@@ -25,4 +29,5 @@ public class Product {
         }
         return false;
     }
+
 }
