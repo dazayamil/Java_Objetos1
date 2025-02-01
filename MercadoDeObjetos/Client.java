@@ -1,8 +1,6 @@
 package MercadoDeObjetos;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Client extends User{
@@ -27,4 +25,21 @@ public class Client extends User{
                 .sorted(Comparator.comparing(order -> order.getProduct().getCategory()))
                 .collect(Collectors.toList());
     }
+
+    private Map<String, Integer> cantidadPorCategoria(){
+        return this.sortedOrders().stream()
+                .collect(Collectors.groupingBy(
+                        order -> order.getProduct().getCategory(),
+                        LinkedHashMap::new,
+                        Collectors.summingInt(order -> order.getProduct().getAvailableQuantity())
+                ));
+    }
+
+    public String mostrarCantidadPedidosPorCategoria(){
+        StringBuilder aux = new StringBuilder();
+        this.cantidadPorCategoria().forEach((category, quantity) -> aux.append("Category: ").append(category).append(" - Quantity: ").append(quantity).append("\n"));
+        return aux.toString();
+    }
+
+
 }
