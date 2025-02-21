@@ -4,21 +4,23 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class example {
+public class ExampleList {
 
-    /*LIST: mantienen el orden de insercion y permiten elementos duplicados
+    /*LIST: mantienen el orden de insercion y permiten elementos duplicados, acceso por indice(directo)
+    Cuando usar esto: Cuando queremos mantener un orden,acceder por posicion y que no importe tener duplicados
+
     * ArrayList -> Mejor para acceso aleatorio y almacenamiento
     * LinkedList -> Mejor para insercion/eliminacion frecuente
     * Vector -> Mejor para busqueda directa
     * */
     public static void main(String[] args) {
-        //ArrayList
+        //ArrayList: Acceso rapido por indice
         List<String> arrayList = new ArrayList<>();
         arrayList.add("Primero");
         arrayList.add("Segundo");
         arrayList.add("Segundo"); //Permite Duplicados
 
-        //LinkedList:
+        //LinkedList: Insercion/eliminacion rapida
         List<String> linkedList = new LinkedList<>();
         linkedList.add("Uno");
         linkedList.addFirst("Cero"); //Metodo especifico de LinkedList
