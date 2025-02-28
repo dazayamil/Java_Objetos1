@@ -5,7 +5,14 @@ import java.util.*;
 import Extra.Colecciones.Set.Persona;
 
 public class ExamplePractice {
+    /*
+    SET: NO permite elementos duplicados,no garantiza un orden especifico, permite como maximo un elemento null,
+    * excepto TreeSet que no permite nulls, optimizados para operaciones de pertenencia(verificar si existe el elemento)
+    * Es ideal el Uso de Set, cuando:
+    * Queremos Eliminar duplicados, cuando la operacion de pertenencia es frecuente, cuando no importa el orden,
+    */
     public static void main(String[] args) {
+        //HASHSET -> Mayor rendimiento para las operaciones, pero no mantiene un orden
         System.out.println("========= HashSet ===========");
         HashSet<String> hashSet = new HashSet<>();
 

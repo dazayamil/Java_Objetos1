@@ -6,11 +6,11 @@ import java.util.TreeSet;
 
 public class ExampleSet {
     public static void main(String[] args) {
-        /*SET: Este tipo de coleccion lo podemos usar cuando no aceptamos duplicados, sino unicos, cuando no nos importa el orden, cuando necesitamos busquedas rapidas.
-        Tomar como una caja de Colores sin duplicados y unicos. Permite elementos Null.
+        /*SET: Este tipo de coleccion lo podemos usar cuando no aceptamos duplicados, sino unicos, cuando no nos importa el orden,
+        cuando necesitamos busquedas rapidas. Tomar como una caja de Colores sin duplicados y unicos. Permite elementos Null.
         * TIPOS:
-        * HASHSET -> Usar cuando no importa el orden de lementos, necesitamos el mejor rendimiento posible
-            se realizan operacion de busqueda. Ejemplo: Cache de Valores Unicos, eliminar duplicados de una coleccion.
+        * HASHSET -> Usar cuando no importa el orden de los elementos, necesitamos el mejor rendimiento posible
+            para realizar operaciones de busqueda. Ejemplo: Cache de Valores Unicos, eliminar duplicados de una coleccion.
         * LINKEDHASHSET -> Usar cuando se necesite el orden de insercion, realizar iteraciones frecuentes, sacrificar
             algo de memoria por predictibilidad. Ejemplo: Historial de navegacion, menus con orden especifico.
         * TREESET -> Usar cuando necesitas elementos ordenados naturalmente, operaciones de rango(between), el orden
