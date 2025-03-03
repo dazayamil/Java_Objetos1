@@ -12,7 +12,7 @@ public class ExampleList {
 
     * ArrayList -> Mejor para acceso aleatorio y almacenamiento, basado en array dinamico,
         bueno para Iteracion, lento para eliminacion y/o insercion.
-    * LinkedList -> Mejor para insercion/eliminacion frecuente, mejor uso en manipulacion de datos.
+    * LinkedList -> Mejor para insercion y eliminacion frecuente, mejor uso en manipulacion de datos.
         lento en acceso aleatorio
     * Vector -> Mejor para busqueda directa
     * */

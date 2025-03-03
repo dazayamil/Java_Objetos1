@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class ExampleMap {
     public static void main(String[] args) {
-        /*Map: Este tipo de coleccion es recomendable usar cuando necesitamos pares como clave y valor, Todo se maneja por clave
+        /* Map: No extiende de Collection, almacena pares clave-valor sin claves duplicadas. Todo se maneja por la Clave
        Lo podemos tomar como un diccionario, donde cada palabra tiene su definicion, guarda pares de valores(clave -> valor)
        Las claves son unicas, perfecto su uso para buscar valores por su clave.
 
@@ -28,7 +28,8 @@ public class ExampleMap {
         edades.put("Juan", 25);
         edades.put("Maria", 28);
         edades.put("Carlos", 30);
-        edades.put("Juan", 25); //Permite duplicados
+        edades.put("Juan", 25); //No Permite duplicados en cuanto la Clave, por eso, esto no se agrega
+        //System.out.println(edades);
 
         //Obtener un valor
         int edadJuan = edades.get("Juan"); //return 25
