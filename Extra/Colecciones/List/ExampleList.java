@@ -36,17 +36,17 @@ public class ExampleList {
         //LinkedList: Insercion/eliminacion rapida
         List<String> linkedList = new LinkedList<>();
         linkedList.add("Uno");
-        linkedList.addFirst("Cero"); //Metodo especifico de LinkedList, se agrega primero
-        linkedList.addLast("Dos"); //Se agrega lo ultimo
+        ((LinkedList<String>) linkedList).addFirst("Cero"); //Metodo especifico de LinkedList, se agrega primero
+        ((LinkedList<String>) linkedList).addLast("Dos"); //Se agrega lo ultimo
 
         //Operaciones:
         //Tiene los metodos de add, addFirst, addLast vistos anteriormente
         linkedList.get(0); //Obtener elemento de una posicion
-        linkedList.getFirst(); //Obtener el primer elemento
-        linkedList.getLast(); //Obtener el ultimo elemento
+        //linkedList.getFirst(); //Obtener el primer elemento
+        //linkedList.getLast(); //Obtener el ultimo elemento
         linkedList.remove(0); //Eliminar por indice
-        linkedList.removeFirst(); //Eliminar el primer elemento
-        linkedList.removeLast(); //Eliminar el ultimo elemento
+        //linkedList.removeFirst(); //Eliminar el primer elemento
+        //linkedList.removeLast(); //Eliminar el ultimo elemento
 
         //Vector
         Vector<String> vector = new Vector<>();
